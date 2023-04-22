@@ -1,13 +1,16 @@
 {
   "name": "finish-that",
   "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "description of the finish",
+  "main": "dist/main.js",
   "scripts": {
     "build": "tsc",
     "watch": "tsc -w",
     "lint": "eslint -c .eslintrc --ext .ts ./src",
-    "dev": "npm run build && electron ./dist/main.js"
+    "dev": "npm run build && electron ./dist/main.js",
+    "start": "electron-forge start",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
   },
   "repository": {
     "type": "git",
@@ -21,10 +24,17 @@
   "homepage": "https://github.com/Speroce/finish-that#readme",
   "devDependencies": {
     "@electron-forge/cli": "^6.1.1",
+    "@electron-forge/maker-deb": "^6.1.1",
+    "@electron-forge/maker-rpm": "^6.1.1",
+    "@electron-forge/maker-squirrel": "^6.1.1",
+    "@electron-forge/maker-zip": "^6.1.1",
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "electron": "^22.2.0",
     "eslint": "^7.32.0",
     "typescript": "^4.8.3"
+  },
+  "dependencies": {
+    "electron-squirrel-startup": "^1.0.0"
   }
 }
