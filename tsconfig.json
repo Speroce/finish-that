@@ -1,10 +1,12 @@
 {
     "compilerOptions": {
       "module": "commonjs",
+      "target": "ESNext",
       "noImplicitAny": true,
       "sourceMap": true,
       "outDir": "dist",
       "baseUrl": ".",
+      "jsx": "react",
       "paths": {
         "*": ["node_modules/*"]
       },

@@ -13,13 +13,18 @@
       content="default-src 'self'; script-src 'self'"
     />
   </head>
+  <link rel="stylesheet" href="main.css">
   <body>
-    <h1>Hello World!</h1>
+    <!-- <h1>Hello World!</h1>
     We are using Node.js <span id="node-version"></span>, Chromium
     <span id="chrome-version"></span>, and Electron
-    <span id="electron-version"></span>.
+    <span id="electron-version"></span>. -->
+    <div id="app"></div>
 
     <!-- You can also require other files to run in this process -->
+    <script src="./node_modules/react/umd/react.development.js"></script>
+    <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
     <script src="./dist/renderer.js"></script>
+    <script src="./dist/initReact.js"></script>
   </body>
 </html>
