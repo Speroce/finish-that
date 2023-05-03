@@ -1,7 +1,8 @@
 interface IRGBModel {
     readonly r: number,
     readonly g: number,
-    readonly b: number
+    readonly b: number,
+    getColorString(): string
 }
 
 const { RGBModel } = (() => {
@@ -15,8 +16,9 @@ const { RGBModel } = (() => {
                 this[c] > 255 && (this[c] = 255);
             }
         }
+        getColorString() {
+            return `rgb(${this.r},${this.g},${this.b})` as const;
+        }
     }
     return { RGBModel };
-
-    type A = RGBModel;
 })();

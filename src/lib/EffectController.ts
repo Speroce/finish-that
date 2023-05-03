@@ -1,15 +1,26 @@
+interface IEffect {
+    readonly id: string;
+    run<Model extends IRGBModel>(model: Model): Model;
+}
+
+interface IEffectController {
+    get outModel(): IRGBModel;
+    addEffect(effect: IEffect): void;
+    removeEffect(id: string): void;
+}
 
 const { EffectController, Effect } = (() => {
 
-    abstract class Effect {
+    abstract class Effect implements IEffect {
         readonly id: string = crypto.randomUUID();
         constructor(
             readonly name: string,
 
         ) { }
-        abstract run<Model>(model: Model): Model;
+        abstract run<Model extends IRGBModel>(model: Model): Model;
     }
-    class EffectController {
+
+    class EffectController implements IEffectController {
         get outModel() {
             return this.cachedModel;
         }
@@ -18,14 +29,14 @@ const { EffectController, Effect } = (() => {
             this.refresh();
         }
         removeEffect(id: string) {
-            this.effectsMap.delete(id);
-            this.refresh();
-         }
+            this.effectsMap.delete(id) && this.refresh();
+        }
+
         private readonly inModel: IRGBModel;
+        private effectsMap: Map<string, Effect> = new Map();
         private get effects() {
             return [...this.effectsMap.values()];
         }
-        private effectsMap: Map<string, Effect> = new Map();
         private cachedModel: IRGBModel;
         private refresh() {
             this.cachedModel = this.effects.reduce((acc, effect) => {
