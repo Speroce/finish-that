@@ -1,16 +1,3 @@
-interface ModelPair {
-    from: RGBModel,
-    to: RGBModel
-}
-
-class SingleplayActor {
-    readonly cardsPanel = new CardsPanel();
-    constructor(
-        public from: RGBModel,
-        public to: RGBModel
-    ) { }
-}
-
 type SingleplayActorType = 'player' | 'AI';
 
 class SingleplayController {
@@ -39,7 +26,17 @@ class SingleplayController {
     playCard(actorType: SingleplayActorType, id: string) {
         const actor = this.getActor(actorType);
         const card = actor.cardsPanel.getCard(id);
-
+        if (!card) {
+            throw new Error('Карточка не найдена');
+        }
+        const { effect } =  card;
+        actor.cardsPanel.removeCard(id);
+        if (effect instanceof RGBEffect) {
+            actor.runRGBEffect(effect);
+        }
+        if (effect instanceof ActionEffect) {
+            effect.run();
+        }
 
     }
     private getActor(actor: SingleplayActorType): SingleplayActor {

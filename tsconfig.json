@@ -3,6 +3,7 @@
       "module": "commonjs",
       "target": "ESNext",
       "noImplicitAny": true,
+      "strict": true,
       "sourceMap": true,
       "outDir": "dist",
       "baseUrl": ".",

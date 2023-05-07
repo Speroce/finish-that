@@ -6,6 +6,7 @@ class RGBModel {
     ) {
         for (const c of ['r', 'g', 'b'] as const) {
             this[c] > 255 && (this[c] = 255);
+            this[c] < 0 && (this[c] = 0);
         }
     }
     getColorString() {

@@ -19,7 +19,7 @@ const getRandomBoundRGB = (() => {
             return -1;
         }
         if (value - limit < 0) {
-            return -1;
+            return 1;
         }
         return Math.random() > 0.5 ? 1 : -1;
     }

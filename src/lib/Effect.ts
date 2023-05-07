@@ -1,17 +1,25 @@
 abstract class Effect {
     readonly id: string = crypto.randomUUID();
     constructor(
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        public run: (...args: any[]) => any,
         readonly name?: string,
         readonly description?: string,
     ) { }
-    abstract run(...args: unknown[]): unknown;
+    // abstract run(...args: unknown[]): unknown;
 }
 
-abstract class RGBEffect extends Effect {
-    abstract run(model: RGBModel): RGBModel;
+class RGBEffect extends Effect {
+    constructor(
+        public run: (model: RGBModel) => RGBModel,
+        readonly name?: string,
+        readonly description?: string,
+    ) { 
+        super(run, name, description);
+    }
 }
 
-abstract class ActionEffect extends Effect {
+class ActionEffect extends Effect {
     // abstract run(...args: unknown[]): unknown;
 }
 
