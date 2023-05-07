@@ -15,20 +15,22 @@
   </head>
   <link rel="stylesheet" href="main.css">
   <body>
-    <!-- <h1>Hello World!</h1>
-    We are using Node.js <span id="node-version"></span>, Chromium
-    <span id="chrome-version"></span>, and Electron
-    <span id="electron-version"></span>. -->
     <div id="app"></div>
 
-    <!-- You can also require other files to run in this process -->
+    <!-- external libs -->
     <script src="./node_modules/react/umd/react.development.js"></script>
     <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
-    <script src="./dist/renderer.js"></script>
-    <script src="./dist/lib/EffectController.js"></script>
-    <script src="./dist/lib/Effect.js"></script>
+
+    <!-- project libs -->
+    <script src="./dist/lib/constants.js"></script>
     <script src="./dist/lib/RGBModel.js"></script>
-    <script src="./dist/react/Colorer.js"></script>
+    <script src="./dist/lib/Effect.js"></script>
+    <script src="./dist/lib/EffectController.js"></script>
+    <script src="./dist/lib/Card.js"></script>
+    <script src="./dist/lib/SingleplayController.js"></script>
+    <script src="./dist/lib/utils.js"></script>
+
+    <!-- react components -->
     <script src="./dist/react/Quadras.js"></script>
     <script src="./dist/react/index.js"></script>
   </body>

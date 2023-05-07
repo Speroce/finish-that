@@ -1,0 +1,3 @@
+const MIN_RGB_DIST = 125;
+const MAX_RGB_DIST = 175;
+const VICTORY_DIST = 25;
