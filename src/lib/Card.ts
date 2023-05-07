@@ -1,16 +1,16 @@
-class Card<E extends Effect = Effect> {
+class Card {
     readonly id: string = crypto.randomUUID();
     constructor(
-        readonly effect: E
+        readonly effect: Effect
     ) { }
 }
 
-class CardsPanel<E extends Effect = Effect> { 
+class CardsPanel { 
     get cards() {
         return [...this.cardsMap.values()];
     }
-    private cardsMap: Map<string, Card<E>> = new Map();
-    addCard(card: Card<E>) {
+    private cardsMap: Map<string, Card> = new Map();
+    addCard(card: Card) {
         this.cardsMap.set(card.id, card);
     }
     removeCard(id: string) {

@@ -37,8 +37,13 @@ const getRandomBoundRGB = (() => {
     }
 })();
 
-function chooseBetterEffectCardId(fromModel: RGBModel, toModel: RGBModel, cards: Card<RGBEffect>[]) {
-    const effects = cards.map(card => card.effect);
+function chooseBetterEffectCardId(fromModel: RGBModel, toModel: RGBModel, cards: Card[]) {
+    const effects = cards.map(card => card.effect as RGBEffect);
+    if (
+        effects.some(effect => !(effect instanceof RGBEffect))
+    ) {
+        throw new TypeError('Только эффекты класса RGBEffect');
+    }
     const effectedModels = effects.map(effect => effect.run(fromModel));
     const dists = effectedModels.map(model => getRGBDist(model, toModel));
     const minDist = Math.min(...dists);
