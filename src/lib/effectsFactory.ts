@@ -57,8 +57,8 @@ const { createSimpleRGBEffect } = (() => {
             effectFn = (model: RGBModel) => increaseByNumber(model, value * dir, baseColor);
             deltaDescription = `${value}`;
         } else {
-            const value = +(Math.random() * MAX_RGB_INCREASE_BY_NUMBER_DELTA * dir).toFixed() / 100 + 1;
-            effectFn = (model: RGBModel) => increaseByNumber(model, value, baseColor);
+            const value = +(Math.random() * MAX_RGB_INCREASE_BY_COEFF_DELTA * dir).toFixed() / 100 + 1;
+            effectFn = (model: RGBModel) => increaseByCoef(model, value, baseColor);
             deltaDescription = `${value}%`;
         }
         if (dir === 1) {

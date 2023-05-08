@@ -50,3 +50,7 @@ function chooseBetterEffectCardId(fromModel: RGBModel, toModel: RGBModel, cards:
     const index = dists.indexOf(minDist);
     return cards[index].id;
 }
+
+function createRGBEffectCard() {
+    return new Card(createSimpleRGBEffect());
+}

@@ -21,7 +21,11 @@ class SingleplayActor {
 
     setFrom(from: RGBModel) {
         this.initFrom = from;
+        const { effects } = this.effectController;
         this.effectController = new EffectController(this.initFrom);
+        for (const effect of effects) {
+            this.effectController.addEffect(effect);
+        }
     }
 
     setTo(to: RGBModel) {

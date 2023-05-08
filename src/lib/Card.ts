@@ -19,4 +19,7 @@ class CardsPanel {
     getCard(id: string) {
         return this.cardsMap.get(id);
     }
+    removeAllCards() {
+        this.cardsMap.clear();
+    }
 }
