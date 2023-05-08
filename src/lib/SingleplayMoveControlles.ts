@@ -6,10 +6,9 @@ class SingleplayMoveControlles {
         return this._movesNumber;
     }
     move() {
-        this._currentActorType = this._currentActorType === 'player' ? 'AI' : 'player';
-        this._movesNumber++;
+        this._currentActorType = this._currentActorType === 'player' ? 'AI' : (this._movesNumber++, 'player');
     }
 
     private _currentActorType: SingleplayActorType = 'player';
-    private _movesNumber =  0;
+    private _movesNumber = 0;
 }
