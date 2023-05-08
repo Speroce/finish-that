@@ -4,6 +4,7 @@ class SingleplayController {
     readonly player: SingleplayActor;
     readonly AI: SingleplayActor;
     constructor() {
+        makeAutoObservable(this);
         const playerTo = getRandomRGB();
         const playerFrom = getRandomBoundRGB(playerTo, MIN_RGB_DIST, MAX_RGB_DIST);
         this.player = new SingleplayActor(playerFrom, playerTo);
@@ -33,6 +34,7 @@ class SingleplayController {
     }
     playerMove(id: string) {
         this.move('player', id);
+        this.AImove();
     }
     AImove() {
         const { from, to } = this.AI;

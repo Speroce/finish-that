@@ -7,16 +7,26 @@ const { Quadras, Qu } = (() => {
         );
     };
 
-    const Quadras: React.FC = () => {
-        return (
-            <div className="quadras-container">
-                <Qu bgColor="yellow" />
-                <Qu bgColor="green" />
-                <Qu bgColor="red" />
-                <Qu bgColor="blue" />
-            </div>
-        );
-    };
+    const Quadras: React.FC<{
+        leftTopColor: string,
+        rightTopColor: string,
+        leftBottomColor: string,
+        rightBottomColor: string
+    }> = ({
+        leftBottomColor,
+        leftTopColor,
+        rightBottomColor,
+        rightTopColor
+    }) => {
+            return (
+                <div className="quadras-container">
+                    <Qu bgColor={leftTopColor} />
+                    <Qu bgColor={rightTopColor} />
+                    <Qu bgColor={leftBottomColor} />
+                    <Qu bgColor={rightBottomColor} />
+                </div>
+            );
+        };
 
     return { Quadras, Qu };
 })();

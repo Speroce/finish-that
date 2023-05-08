@@ -2,10 +2,15 @@ class Card {
     readonly id: string = crypto.randomUUID();
     constructor(
         readonly effect: Effect
-    ) { }
+    ) { 
+        makeAutoObservable(this);
+    }
 }
 
 class CardsPanel { 
+    constructor() {
+        makeAutoObservable(this);
+    }
     get cards() {
         return [...this.cardsMap.values()];
     }

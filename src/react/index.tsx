@@ -1,23 +1,25 @@
-const { useState, useCallback, useRef, useMemo } = React;
-const { observer } = mobxReact;
-const { makeAutoObservable } = mobx;
-
-const App = () => (
-    <div className="layout">
-        <Quadras />
-        {/* <div className="cards-panel first-player-cards-panel">
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
+const App = observer(() => {
+    const [gameController] = useState(new SingleplayController());
+    return (
+        <div className="layout">
+            <Quadras 
+                leftTopColor={gameController.leftTop.getColorString()}
+                leftBottomColor={gameController.leftBottom.getColorString()}
+                rightTopColor={gameController.rightTop.getColorString()}
+                rightBottomColor={gameController.rightBottom.getColorString()}
+            />
+            <CardsPanelView
+                gameController={gameController}
+                panel={gameController.player.cardsPanel}
+                playerNumber="first"
+            ></CardsPanelView>
+            <CardsPanelView
+                gameController={gameController}
+                panel={gameController.AI.cardsPanel}
+                playerNumber="second"
+            ></CardsPanelView>
         </div>
-        <div className="cards-panel second-player-cards-panel">
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
-            <div className="card"></div>
-        </div> */}
-    </div>
-);
+    )
+});
 
 ReactDOM.render(<App></App>, document.getElementById('app'));

@@ -2,6 +2,7 @@ class EffectController {
     constructor(
         private readonly inModel: RGBModel
     ) {
+        makeAutoObservable(this);
         this.cachedModel = inModel;
     }
     get outModel() {

@@ -4,6 +4,7 @@ class SingleplayActor {
         private initFrom: RGBModel,
         private initTo: RGBModel
     ) {
+        makeAutoObservable(this);
         this.effectController = new EffectController(this.initFrom);
      }
 
