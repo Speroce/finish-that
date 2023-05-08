@@ -8,6 +8,7 @@
       "outDir": "dist",
       "baseUrl": ".",
       "jsx": "react",
+      "useDefineForClassFields": true,
       "paths": {
         "*": ["node_modules/*"]
       },

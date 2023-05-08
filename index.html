@@ -1,40 +1,40 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Hello World!</title>
-    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-    <meta
-      http-equiv="X-Content-Security-Policy"
-      content="default-src 'self'; script-src 'self'"
-    />
-  </head>
-  <link rel="stylesheet" href="main.css">
-  <body>
-    <div id="app"></div>
 
-    <!-- external libs -->
-    <script src="./node_modules/react/umd/react.development.js"></script>
-    <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+<head>
+  <meta charset="UTF-8" />
+  <title>Hello World!</title>
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+  <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'" />
+</head>
+<link rel="stylesheet" href="main.css">
 
-    <!-- project libs -->
-    <script src="./dist/lib/constants.js"></script>
-    <script src="./dist/lib/RGBModel.js"></script>
-    <script src="./dist/lib/Effect.js"></script>
-    <script src="./dist/lib/EffectController.js"></script>
-    <script src="./dist/lib/effectsFactory.js"></script>
-    <script src="./dist/lib/Card.js"></script>
-    <script src="./dist/lib/SingleplayActor.js"></script>
-    <script src="./dist/lib/SingleplayMoveControlles.js"></script>
-    <script src="./dist/lib/SingleplayController.js"></script>
-    <script src="./dist/lib/utils.js"></script>
+<body>
+  <div id="app"></div>
 
-    <!-- react components -->
-    <script src="./dist/react/Quadras.js"></script>
-    <script src="./dist/react/index.js"></script>
-  </body>
+  <!-- external libs -->
+  <script src="./node_modules/react/umd/react.development.js"></script>
+  <script src="./node_modules/react-dom/umd/react-dom.development.js"></script>
+  <script src="./node_modules/mobx/dist/mobx.umd.development.js"></script>
+  <script src="./node_modules/mobx-react-lite/dist/mobxreactlite.umd.development.js"></script>
+  <script src="./node_modules/mobx-react/dist/mobxreact.umd.development.js"></script>
+
+  <!-- project libs -->
+  <script src="./dist/lib/constants.js"></script>
+  <script src="./dist/lib/RGBModel.js"></script>
+  <script src="./dist/lib/Effect.js"></script>
+  <script src="./dist/lib/EffectController.js"></script>
+  <script src="./dist/lib/effectsFactory.js"></script>
+  <script src="./dist/lib/Card.js"></script>
+  <script src="./dist/lib/SingleplayActor.js"></script>
+  <script src="./dist/lib/SingleplayMoveControlles.js"></script>
+  <script src="./dist/lib/SingleplayController.js"></script>
+  <script src="./dist/lib/utils.js"></script>
+
+  <!-- react components -->
+  <script src="./dist/react/Quadras.js"></script>
+  <script src="./dist/react/index.js"></script>
+</body>
+
 </html>
