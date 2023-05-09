@@ -72,7 +72,7 @@ body {
     width: 100%;
 }
 
-.card-container > * {
+.card-container>* {
     margin: 5px;
     border-radius: 5px;
     padding: 5px;
@@ -92,6 +92,16 @@ body {
     text-align: start;
 }
 
+
+.second-player-cards-panel .card-name-container {
+    flex-direction: row-reverse;
+}
+
+/* .second-player-cards-panel .card-name {
+    text-align: start;
+} */
+
+
 .card-description {
     font-size: 14px;
     background: #f3c4ff;
@@ -105,4 +115,24 @@ body {
 
 .qu {
     display: inline-block;
+    transition: background .4s;
+}
+
+.effect-arrow {
+    font-size: 16px;
+}
+
+.card-name-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+
+}
+
+.card-name-arrows {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
 }

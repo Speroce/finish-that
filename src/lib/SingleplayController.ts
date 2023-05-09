@@ -59,6 +59,7 @@ class SingleplayController {
     private checkWinner() {
         const actor = this.getActor(this.moveController.currentActorType);
         if (getRGBDist(actor.from, actor.to) <= VICTORY_DIST) {
+            // console.log(this.currentActorName, actor.from.getColorString(), actor.to.getColorString());
             alert(`Победил ${this.currentActorName}!`);
             window.location.reload();
         }

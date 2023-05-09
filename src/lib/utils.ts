@@ -6,9 +6,9 @@ function getRGBDist(rgb1: RGBModel, rgb2: RGBModel) {
 }
 
 function getRandomRGB() {
-    const r = Math.random() * 255;
-    const g = Math.random() * 255;
-    const b = Math.random() * 255;
+    const r = +(Math.random() * 255).toFixed();
+    const g = +(Math.random() * 255).toFixed();
+    const b = +(Math.random() * 255).toFixed();
     return new RGBModel(r, g, b);
 }
 

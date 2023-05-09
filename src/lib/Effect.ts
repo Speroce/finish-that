@@ -10,12 +10,19 @@ abstract class Effect {
 }
 
 class RGBEffect extends Effect {
+    
     constructor(
         public run: (model: RGBModel) => RGBModel,
+        readonly deltaString: string,
         readonly name?: string,
         readonly description?: string,
     ) { 
         super(run, name, description);
+    }
+    get sign(): RGBSign {
+        const model = new RGBModel(128, 128, 128);
+        const effected = this.run(model);
+        return RGBModel.sign(model, effected);
     }
 }
 

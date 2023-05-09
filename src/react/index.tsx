@@ -1,5 +1,5 @@
 const App = observer(() => {
-    const [gameController] = useState(new SingleplayController());
+    const [gameController] = useState(() => new SingleplayController());
     return (
         <div className="layout">
             <Quadras 

@@ -26,9 +26,9 @@ const { createSimpleRGBEffect } = (() => {
     }
 
     const targetedNamesDict = {
-        r: ['красность', 'красноту', 'красноподобие', 'красноватость', 'РЭД', 'красный цвет'],
-        g: ['зелень', 'зелёность', 'зеленоту', 'уровень зелёного', 'зеленистость', 'зеленообразие'],
-        b: ['синесть', 'синеватость', 'синий', 'цвет неба и моря', 'синь', 'синеву']
+        r: ['красность', 'красноту', `краснопо${WRAP_CHAR}добие`, `краснова${WRAP_CHAR}тость`, 'РЭД', 'красный цвет'],
+        g: ['зелень', 'зелёность', 'зеленоту', 'уровень зелёного', `зелени${WRAP_CHAR}стость`, `зеленооб${WRAP_CHAR}разие`],
+        b: ['синесть', `синева${WRAP_CHAR}тость`, 'синий', 'цвет неба и моря', 'синь', 'синеву']
     };
 
     function getTargetedName(color: BaseColor) {
@@ -64,12 +64,12 @@ const { createSimpleRGBEffect } = (() => {
         }
         if (dir === 1) {
             name = `${getIncreaseName()} ${getTargetedName(baseColor)}`;
-            description = `Увеличивает ${getTargetedName(baseColor)} на ${deltaDescription}`;
+            description = `Увеличивает ${getTargetedName(baseColor)} на`;
         } else {
             name = `${getDecreaseName()} ${getTargetedName(baseColor)}`;
-            description = `Уменьшает ${getTargetedName(baseColor)} на ${deltaDescription}`;
+            description = `Уменьшает ${getTargetedName(baseColor)} на`;
         }
-        return new RGBEffect(effectFn, name, description);
+        return new RGBEffect(effectFn, deltaDescription, name, description);
     }
 
     return { createSimpleRGBEffect };
